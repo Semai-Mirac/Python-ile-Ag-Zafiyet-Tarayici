@@ -1,0 +1,21 @@
+Tarama hizini artirmak icin coklu is parcacigi (thread) kullanıldı ve --workers parametresiyle eszamanli tarama sayisini ayarlanabilir. Artik soket tabanli tarama paralel calisir.
+Ornek hizli kullanim:                   python "Python ile Ağ Zafiyet Tarayıcı.py" 192.168.1.0/24 --workers 200
+
+
+Tek IP tarama:                          python "Python ile Ağ Zafiyet Tarayıcı.py" 192.168.1.10
+
+CIDR aralığı tarama:                    python "Python ile Ağ Zafiyet Tarayıcı.py" 192.168.1.0/24
+
+Port seçimi (liste veya aralık):        python "Python ile Ağ Zafiyet Tarayıcı.py" 192.168.1.10 --ports 22,80,443 python "Python ile Ağ Zafiyet Tarayıcı.py" 192.168.1.0/24 --ports 1-1024
+
+Zaman aşımı ayarı:                      python "Python ile Ağ Zafiyet Tarayıcı.py" 192.168.1.0/24 --timeout 1.0
+
+
+Nmap ile servis tespiti (opsiyonel):                            pip install python-nmap
+Ayrıca sisteminde nmap kurulu ve PATH’e ekli olmalı. Sonra:     python "Python ile Ağ Zafiyet Tarayıcı.py" 192.168.1.0/24 --use-nmap 
+
+
+!!! Hiz arttirmak icin ipuclari:
+--workers degerini artir (ornegin 200-400). Cok yuksek degerler agi zorlayabilir.
+--timeout degerini dusur (ornegin 0.3) ama yalanci negatif riskini artirir.
+--ports ile port sayisini daralt.
